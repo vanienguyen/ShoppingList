@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, ListView} from 'react-native';
 
 
-export default class App extends React.Component {
+export default class ItemList extends React.Component {
     constructor(props) {
         super(props);
 
@@ -20,9 +20,10 @@ export default class App extends React.Component {
     _renderRow(items) {
         return(
             <View style={styles.item_container}>
+
                 <Text>{items}</Text>
             </View>
-        )
+    )
     }
 
     render() {
@@ -31,16 +32,14 @@ export default class App extends React.Component {
                 <ListView
                     renderRow = {this._renderRow.bind(this)}
                     dataSource = {this.state.dataSource}
-                />
+                    />
             </View>
 
         );
-    }
-}
+    }}
+    const styles = StyleSheet.create({
 
-const styles = StyleSheet.create({
-
-    item_container: {
+        item_container: {
         height: 100,
         backgroundColor: '#f0f8ff',
         margin: 5,
@@ -50,5 +49,5 @@ const styles = StyleSheet.create({
     }
 
 
-});
+    });
 
